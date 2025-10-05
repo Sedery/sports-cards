@@ -1,0 +1,8 @@
+.header {
+    margin: 15%;
+    text-align: center;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1d7299;
+b   ackground: linear-gradient(90deg, rgba(29, 114, 153, 1) 0%, rgba(102, 107, 122, 1) 100%);
+}
