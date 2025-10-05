@@ -1,8 +1,21 @@
 .header {
-    margin: 15%;
+    padding: 15%;
     text-align: center;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #1d7299;
     background: linear-gradient(90deg, rgba(29, 114, 153, 1) 0%, rgba(102, 107, 122, 1) 100%);
+}
+
+button {
+    background-color: #34a3ee; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
