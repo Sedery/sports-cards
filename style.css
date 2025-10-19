@@ -29,4 +29,5 @@ button {
     color: #333;
     margin-left: 40px;
     font-weight: 700;
+    justify-content: center;
 }
