@@ -22,3 +22,11 @@ button {
     margin: 4px 2px;
     cursor: pointer;
 }
+
+.Section-Header {
+    font-size: 2rem;
+    text-align: left;
+    color: #333;
+    margin-left: 40px;
+    font-weight: 700;
+}
