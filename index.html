@@ -48,17 +48,18 @@
         </header>
 
         <script>
-            // Inline script to handle mobile off-canvas
+            // Inline script to handle mobile off-canvas and sticky->fixed navbar behavior
             (function(){
                 const btn = document.getElementById('mobile-menu-btn');
                 const off = document.getElementById('offcanvas');
                 const close = document.getElementById('offcanvas-close');
-                function open(){ off.style.right = '0'; document.body.style.overflow = 'hidden'; }
-                function closeOff(){ off.style.right = '-320px'; document.body.style.overflow = ''; }
+                function open(){ if(off) { off.style.right = '0'; document.body.style.overflow = 'hidden'; } }
+                function closeOff(){ if(off) { off.style.right = '-320px'; document.body.style.overflow = ''; } }
                 if(btn){ btn.addEventListener('click', open); }
                 if(close){ close.addEventListener('click', closeOff); }
                 // Close when clicking a link inside offcanvas
-                off.querySelectorAll('a').forEach(a=> a.addEventListener('click', closeOff));
+                if(off){ off.querySelectorAll('a').forEach(a=> a.addEventListener('click', closeOff)); }
+
                 // Responsive show/hide mobile btn and desktop nav
                 function updateNav(){
                     const mq = window.matchMedia('(max-width:720px)');
@@ -67,6 +68,84 @@
                 }
                 window.addEventListener('resize', updateNav);
                 updateNav();
+
+                // Sticky -> fixed transition after the hero (.header) section
+                const siteHeader = document.getElementById('site-header');
+                const hero = document.querySelector('.header');
+                if(!siteHeader || !hero) return; // nothing to do
+
+                const placeholderId = 'site-header-placeholder';
+                let isFixed = false;
+
+                function makeFixed(){
+                    if(isFixed) return;
+                    const headerRect = siteHeader.getBoundingClientRect();
+                    const h = Math.round(headerRect.height) || siteHeader.offsetHeight;
+                    // insert placeholder to prevent layout jump
+                    let ph = document.getElementById(placeholderId);
+                    if(!ph){
+                        ph = document.createElement('div');
+                        ph.id = placeholderId;
+                        ph.style.width = '100%';
+                    }
+                    ph.style.height = h + 'px';
+                    siteHeader.parentNode.insertBefore(ph, siteHeader);
+
+                    // apply fixed styles
+                    siteHeader.style.position = 'fixed';
+                    siteHeader.style.top = '0';
+                    siteHeader.style.left = '0';
+                    siteHeader.style.right = '0';
+                    siteHeader.style.width = '100%';
+                    siteHeader.style.background = '#000';
+                    siteHeader.style.boxShadow = '0 6px 20px rgba(0,0,0,0.4)';
+                    siteHeader.style.zIndex = '9999';
+
+                    // update link colors for contrast
+                    const links = siteHeader.querySelectorAll('a');
+                    links.forEach(a => a.style.color = '#fff');
+                    const smallText = siteHeader.querySelectorAll('div');
+                    smallText.forEach(d => { if(d.style && d.style.color) d.style.color = '#fff'; });
+                    const cta = document.getElementById('cta-desktop');
+                    if(cta){ cta.style.background = '#1a73e8'; cta.style.color = '#fff'; }
+
+                    isFixed = true;
+                }
+
+                function makeSticky(){
+                    if(!isFixed) return;
+                    const ph = document.getElementById(placeholderId);
+                    if(ph && ph.parentNode) ph.parentNode.removeChild(ph);
+
+                    siteHeader.style.position = 'sticky';
+                    siteHeader.style.background = 'transparent';
+                    siteHeader.style.boxShadow = 'none';
+                    siteHeader.style.zIndex = '60';
+
+                    const links = siteHeader.querySelectorAll('a');
+                    links.forEach(a => a.style.color = 'rgba(255,255,255,0.95)');
+                    const smallText = siteHeader.querySelectorAll('div');
+                    smallText.forEach(d => { if(d.style && d.style.color) d.style.color = 'rgba(255,255,255,0.75)'; });
+                    const cta = document.getElementById('cta-desktop');
+                    if(cta){ cta.style.background = '#1a73e8'; cta.style.color = '#fff'; }
+
+                    isFixed = false;
+                }
+
+                function onScroll(){
+                    // When the page is scrolled past the bottom of the hero (.header), fix the navbar
+                    const heroBottom = hero.offsetTop + hero.offsetHeight;
+                    const scrollY = window.scrollY || window.pageYOffset;
+                    if(scrollY >= heroBottom){
+                        makeFixed();
+                    } else {
+                        makeSticky();
+                    }
+                }
+
+                window.addEventListener('scroll', onScroll);
+                // initial check in case page loads scrolled down
+                onScroll();
             })();
         </script>
 
