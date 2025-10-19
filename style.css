@@ -29,15 +29,17 @@ body {
 .products::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); border-radius: 8px; }
 
 .product-card {
-    flex: 0 0 92% !important; /* mobile: almost full width */
-    max-width: 92% !important;
+    /* mobile: almost full width but never exceed 500px */
+    flex: 0 0 92% !important;
+    max-width: min(92% , 500px) !important;
     box-sizing: border-box;
 }
 
 /* Desktop: show up to 3 cards visible, remaining scroll horizontally */
 @media (min-width: 900px) {
     .products { gap: 28px; padding: 24px; }
-    .product-card { flex: 0 0 calc((100% - 56px) / 3); max-width: calc((100% - 56px) / 3); }
+    /* ensure three-up layout but cap each card at 500px */
+    .product-card { flex: 0 0 min( calc((100% - 56px) / 3), 500px ); max-width: min( calc((100% - 56px) / 3), 500px ); }
 }
 
 /* Small tweaks so images remain curved and full width */
