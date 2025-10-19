@@ -15,6 +15,34 @@ body {
     overflow-x: scroll;
 }
 
+/* New responsive horizontal product scroller */
+.products {
+    display: flex; /* kept inline in HTML but reinforce here */
+    gap: 20px;
+    padding: 16px;
+    margin: 24px 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.products::-webkit-scrollbar { height: 10px; }
+.products::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); border-radius: 8px; }
+
+.product-card {
+    flex: 0 0 92% !important; /* mobile: almost full width */
+    max-width: 92% !important;
+    box-sizing: border-box;
+}
+
+/* Desktop: show up to 3 cards visible, remaining scroll horizontally */
+@media (min-width: 900px) {
+    .products { gap: 28px; padding: 24px; }
+    .product-card { flex: 0 0 calc((100% - 56px) / 3); max-width: calc((100% - 56px) / 3); }
+}
+
+/* Small tweaks so images remain curved and full width */
+.product-card img { width: 100%; border-radius: 14px; display: block; }
+
 button {
     background-color: #34a3ee; 
     border: none;
