@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -20,7 +23,7 @@ body {
     display: flex; /* kept inline in HTML but reinforce here */
     gap: 20px;
     padding: 16px;
-    margin: 24px 0;
+    margin: 10%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 }
