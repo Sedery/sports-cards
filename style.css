@@ -23,7 +23,7 @@ body {
     display: flex; /* kept inline in HTML but reinforce here */
     gap: 20px;
     padding: 16px;
-    margin: 10%;
+    margin-left: 10%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 }
