@@ -23,7 +23,7 @@ body {
     display: flex; /* kept inline in HTML but reinforce here */
     gap: 20px;
     padding: 16px;
-    margin-left: 10%;
+    margin: 0% 0% 0% 7%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 }
@@ -65,7 +65,7 @@ button {
     font-size: 2rem;
     text-align: left;
     color: #333;
-    margin-left: 10%;
+    margin-left: 7%;
     font-weight: 700;
     justify-content: center;
 }
