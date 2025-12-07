@@ -1,5 +1,6 @@
 html {
     scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
@@ -97,9 +98,11 @@ input {
 }
 
 input,label,textarea {
-    padding: 8px;
+    padding: 14px; /* larger tap/click target */
+    font-size: 1.05rem; /* slightly bigger text */
+    min-height: 48px; /* ensures taller inputs */
     width: 100%;
     box-sizing: border-box;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 6px;
 }
