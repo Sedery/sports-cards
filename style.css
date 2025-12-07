@@ -73,6 +73,8 @@ button {
 form {
     margin-left: 7%;
     margin-right: 7%;
+    width: 86%;
+    max-width: 86%;
     font-size: 1rem;
     font-weight: 700;
     display: flex;
@@ -87,7 +89,11 @@ form {
 }
 
 label {
-    margin-bottom: 5px;
+    margin-bottom: 12px;
+}
+
+input {
+    margin-bottom: 20px;
 }
 
 input,label,textarea {
