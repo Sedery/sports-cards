@@ -85,10 +85,12 @@ form {
     display: flex;
     flex-direction: column;
 }
-.form-group label {
+
+label {
     margin-bottom: 5px;
 }
-input {
+
+input,label,textarea {
     padding: 8px;
     width: 100%;
     box-sizing: border-box;
