@@ -1,70 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
     <title>STE Cards</title>
 </head>
+
 <body>
     <div style="background: linear-gradient(90deg,#0f172a,#0b2a66);">
         <!-- Top navigation -->
-        <header id="site-header" style="width:100%; box-sizing: border-box; color: #fff; padding: 12px 20px; position: sticky; top: 0; z-index: 60;">
-            <div style="max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+        <header id="site-header"
+            style="width:100%; box-sizing: border-box; color: #fff; padding: 12px 20px; position: sticky; top: 0; z-index: 60;">
+            <div
+                style="max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:16px;">
                 <div style="display:flex; align-items:center; gap:12px;">
-                    <img src="logo.jpg" alt="logo" style="width:44px; height:44px; border-radius:10px; background:rgba(255,255,255,0.08); display:inline-block;">
+                    <img src="logo.jpg" alt="logo"
+                        style="width:44px; height:44px; border-radius:10px; background:rgba(255,255,255,0.08); display:inline-block;">
                     <div>
                         <div style="font-weight:700; font-size:1.1rem; letter-spacing:0.6px;">STE Cards</div>
-                        <div style="font-size:0.75rem; color:rgba(255,255,255,0.75); margin-top:2px;">Custom sports cards</div>
+                        <div style="font-size:0.75rem; color:rgba(255,255,255,0.75); margin-top:2px;">Custom sports
+                            cards</div>
                     </div>
                 </div>
 
                 <!-- Desktop nav -->
                 <nav id="main-nav" style="display:flex; gap:20px; align-items:center;">
-                    <a href="index.html" style="color:rgba(255,255,255,0.95); text-decoration:none; font-weight:600;">Shop</a>
+                    <a href="index.html"
+                        style="color:rgba(255,255,255,0.95); text-decoration:none; font-weight:600;">Shop</a>
                     <a href="#" style="color:rgba(255,255,255,0.85); text-decoration:none;">About</a>
-                    <a href="contact.html" >
-                    <button id="cta-desktop" style="background:#1a73e8; color:#fff; border:none; padding:8px 14px; border-radius:10px; font-weight:700; cursor:pointer;">Request</button>
+                    <a href="contact.html">
+                        <button id="cta-desktop"
+                            style="background:#1a73e8; color:#fff; border:none; padding:8px 14px; border-radius:10px; font-weight:700; cursor:pointer;">Request</button>
                     </a>
                 </nav>
 
                 <!-- Mobile menu button -->
-                <button id="mobile-menu-btn" aria-label="Open menu" style="display:none; background:transparent; border:1px solid rgba(255,255,255,0.12); color:#fff; padding:8px; border-radius:10px;">
+                <button id="mobile-menu-btn" aria-label="Open menu"
+                    style="display:none; background:transparent; border:1px solid rgba(255,255,255,0.12); color:#fff; padding:8px; border-radius:10px;">
                     ☰
                 </button>
             </div>
             <!-- Offcanvas mobile panel -->
-            <div id="offcanvas" style="position:fixed; top:0; right:-320px; width:280px; height:100vh; background:#071133; box-shadow: -16px 0 40px rgba(3,7,18,0.6); padding:24px; transition: right 250ms ease; z-index:70;">
+            <div id="offcanvas"
+                style="position:fixed; top:0; right:-320px; width:280px; height:100vh; background:#071133; box-shadow: -16px 0 40px rgba(3,7,18,0.6); padding:24px; transition: right 250ms ease; z-index:70;">
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
                     <div style="font-weight:800; color:#fff;">Menu</div>
-                    <button id="offcanvas-close" aria-label="Close menu" style="background:transparent; border:none; color:#fff; font-size:20px; cursor:pointer;">✕</button>
+                    <button id="offcanvas-close" aria-label="Close menu"
+                        style="background:transparent; border:none; color:#fff; font-size:20px; cursor:pointer;">✕</button>
                 </div>
                 <nav style="display:flex; flex-direction:column; gap:12px;">
-                    <a href="index.html" style="color:#fff; text-decoration:none; font-weight:700; padding:8px 6px; border-radius:8px;">Shop</a>
-                    <a href="#" style="color:#cbd5e1; text-decoration:none; padding:8px 6px; border-radius:8px;">About</a>
-                    <a href="contact.html" style="margin-top:8px; display:inline-block; background:#1a73e8; color:#fff; text-align:center; padding:10px 12px; border-radius:10px; font-weight:700;">Request a card</a>
+                    <a href="index.html"
+                        style="color:#fff; text-decoration:none; font-weight:700; padding:8px 6px; border-radius:8px;">Shop</a>
+                    <a href="#"
+                        style="color:#cbd5e1; text-decoration:none; padding:8px 6px; border-radius:8px;">About</a>
+                    <a href="contact.html"
+                        style="margin-top:8px; display:inline-block; background:#1a73e8; color:#fff; text-align:center; padding:10px 12px; border-radius:10px; font-weight:700;">Request
+                        a card</a>
                 </nav>
             </div>
         </header>
 
         <script>
             // Inline script to handle mobile off-canvas and sticky->fixed navbar behavior
-            (function(){
+            (function () {
                 const btn = document.getElementById('mobile-menu-btn');
                 const off = document.getElementById('offcanvas');
                 const close = document.getElementById('offcanvas-close');
-                function open(){ if(off) { off.style.right = '0'; document.body.style.overflow = 'hidden'; } }
-                function closeOff(){ if(off) { off.style.right = '-320px'; document.body.style.overflow = ''; } }
-                if(btn){ btn.addEventListener('click', open); }
-                if(close){ close.addEventListener('click', closeOff); }
+                function open() {if (off) {off.style.right = '0'; document.body.style.overflow = 'hidden';} }
+                function closeOff() {if (off) {off.style.right = '-320px'; document.body.style.overflow = '';} }
+                if (btn) {btn.addEventListener('click', open);}
+                if (close) {close.addEventListener('click', closeOff);}
                 // Close when clicking a link inside offcanvas
-                if(off){ off.querySelectorAll('a').forEach(a=> a.addEventListener('click', closeOff)); }
+                if (off) {off.querySelectorAll('a').forEach(a => a.addEventListener('click', closeOff));}
 
                 // Responsive show/hide mobile btn and desktop nav
-                function updateNav(){
+                function updateNav() {
                     const mq = window.matchMedia('(max-width:720px)');
                     const main = document.getElementById('main-nav');
-                    if(mq.matches){ if(main) main.style.display = 'none'; if(btn) btn.style.display = 'inline-block'; } else { if(main) main.style.display = 'flex'; if(btn) btn.style.display = 'none'; closeOff(); }
+                    if (mq.matches) {if (main) main.style.display = 'none'; if (btn) btn.style.display = 'inline-block';} else {if (main) main.style.display = 'flex'; if (btn) btn.style.display = 'none'; closeOff();}
                 }
                 window.addEventListener('resize', updateNav);
                 updateNav();
@@ -72,18 +87,18 @@
                 // Sticky -> fixed transition after the hero (.header) section
                 const siteHeader = document.getElementById('site-header');
                 const hero = document.querySelector('.header');
-                if(!siteHeader || !hero) return; // nothing to do
+                if (!siteHeader || !hero) return; // nothing to do
 
                 const placeholderId = 'site-header-placeholder';
                 let isFixed = false;
 
-                function makeFixed(){
-                    if(isFixed) return;
+                function makeFixed() {
+                    if (isFixed) return;
                     const headerRect = siteHeader.getBoundingClientRect();
                     const h = Math.round(headerRect.height) || siteHeader.offsetHeight;
                     // insert placeholder to prevent layout jump
                     let ph = document.getElementById(placeholderId);
-                    if(!ph){
+                    if (!ph) {
                         ph = document.createElement('div');
                         ph.id = placeholderId;
                         ph.style.width = '100%';
@@ -105,17 +120,17 @@
                     const links = siteHeader.querySelectorAll('a');
                     links.forEach(a => a.style.color = '#fff');
                     const smallText = siteHeader.querySelectorAll('div');
-                    smallText.forEach(d => { if(d.style && d.style.color) d.style.color = '#fff'; });
+                    smallText.forEach(d => {if (d.style && d.style.color) d.style.color = '#fff';});
                     const cta = document.getElementById('cta-desktop');
-                    if(cta){ cta.style.background = '#1a73e8'; cta.style.color = '#fff'; }
+                    if (cta) {cta.style.background = '#1a73e8'; cta.style.color = '#fff';}
 
                     isFixed = true;
                 }
 
-                function makeSticky(){
-                    if(!isFixed) return;
+                function makeSticky() {
+                    if (!isFixed) return;
                     const ph = document.getElementById(placeholderId);
-                    if(ph && ph.parentNode) ph.parentNode.removeChild(ph);
+                    if (ph && ph.parentNode) ph.parentNode.removeChild(ph);
 
                     siteHeader.style.position = 'sticky';
                     siteHeader.style.background = 'transparent';
@@ -125,18 +140,18 @@
                     const links = siteHeader.querySelectorAll('a');
                     links.forEach(a => a.style.color = 'rgba(255,255,255,0.95)');
                     const smallText = siteHeader.querySelectorAll('div');
-                    smallText.forEach(d => { if(d.style && d.style.color) d.style.color = 'rgba(255,255,255,0.75)'; });
+                    smallText.forEach(d => {if (d.style && d.style.color) d.style.color = 'rgba(255,255,255,0.75)';});
                     const cta = document.getElementById('cta-desktop');
-                    if(cta){ cta.style.background = '#1a73e8'; cta.style.color = '#fff'; }
+                    if (cta) {cta.style.background = '#1a73e8'; cta.style.color = '#fff';}
 
                     isFixed = false;
                 }
 
-                function onScroll(){
+                function onScroll() {
                     // When the page is scrolled past the bottom of the hero (.header), fix the navbar
                     const heroBottom = hero.offsetTop + hero.offsetHeight;
                     const scrollY = window.scrollY || window.pageYOffset;
-                    if(scrollY >= heroBottom){
+                    if (scrollY >= heroBottom) {
                         makeFixed();
                     } else {
                         makeSticky();
@@ -154,12 +169,12 @@
                 STE Cards
             </h1>
             <p>Best customs cards in the market. Checkout the stock below, or request your own today! </p>
-            <a href="#products"> 
+            <a href="#products">
                 <button>
                     See our inventory
                 </button>
             </a>
-            <a href="contact.html"> 
+            <a href="contact.html">
                 <button>
                     Request a custom card
                 </button>
@@ -169,73 +184,137 @@
 
 
     <div id="products"></div>
-    <h2 class="Section-Header">NFL</h2> 
-       <div class="products" style="display: flex; gap: 32px; justify-content: center; ">
-    <div class="product-card" style="background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 280px; padding: 20px; display: flex; flex-direction: column; align-items: left;">
-            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Basketball Card" style="width: 100%; border-radius: 14px; object-fit: cover; margin-bottom: 16px;">
+    <h2 class="Section-Header">NFL</h2>
+    <div class="products" style="display: flex; gap: 32px; justify-content: center; ">
+        <div class="product-card"
+            style="background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 280px; padding: 20px; display: flex; flex-direction: column; align-items: left;">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                alt="Basketball Card" style="width: 100%; border-radius: 14px; object-fit: cover; margin-bottom: 16px;">
             <h2 style="font-size: 1.2rem; margin: 0 0 8px 0; font-weight: 600;">Elite Slam Basketball Card</h2>
-            <p style="color: #555; font-size: 0.98rem; margin: 0 0 14px 0; text-align: left;">A rare collectible featuring a dynamic slam dunk moment. Perfect for basketball fans and collectors.</p>
+            <p style="color: #555; font-size: 0.98rem; margin: 0 0 14px 0; text-align: left;">A rare collectible
+                featuring a dynamic slam dunk moment. Perfect for basketball fans and collectors.</p>
             <span style="font-size: 1.1rem; font-weight: bold; color: #1a73e8;">$29.99</span>
         </div>
-    <div class="product-card" style="background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 280px; padding: 20px; display: flex; flex-direction: column; align-items: left;">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Soccer Card" style="width: 100%; border-radius: 14px; object-fit: cover; margin-bottom: 16px;">
+        <div class="product-card"
+            style="background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 280px; padding: 20px; display: flex; flex-direction: column; align-items: left;">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                alt="Soccer Card" style="width: 100%; border-radius: 14px; object-fit: cover; margin-bottom: 16px;">
             <h2 style="font-size: 1.2rem; margin: 0 0 8px 0; font-weight: 600;">Legends Soccer Card</h2>
-            <p style="color: #555; font-size: 0.98rem; margin: 0 0 14px 0; text-align: left;">Celebrate the greatest moments in soccer history with this premium card. A must-have for true fans.</p>
+            <p style="color: #555; font-size: 0.98rem; margin: 0 0 14px 0; text-align: left;">Celebrate the greatest
+                moments in soccer history with this premium card. A must-have for true fans.</p>
             <span style="font-size: 1.1rem; font-weight: bold; color: #1a73e8;">$24.50</span>
         </div>
-    <div class="product-card" style="background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 280px; padding: 20px; display: flex; flex-direction: column; align-items: left;">
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Baseball Card" style="width: 100%; border-radius: 14px; object-fit: cover; margin-bottom: 16px;">
+        <div class="product-card"
+            style="background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 280px; padding: 20px; display: flex; flex-direction: column; align-items: left;">
+            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
+                alt="Baseball Card" style="width: 100%; border-radius: 14px; object-fit: cover; margin-bottom: 16px;">
             <h2 style="font-size: 1.2rem; margin: 0 0 8px 0; font-weight: 600;">Classic Baseball Card</h2>
-            <p style="color: #555; font-size: 0.98rem; margin: 0 0 14px 0; text-align: left;">Own a piece of baseball nostalgia with this beautifully designed card. Ideal for collectors of all ages.</p>
+            <p style="color: #555; font-size: 0.98rem; margin: 0 0 14px 0; text-align: left;">Own a piece of baseball
+                nostalgia with this beautifully designed card. Ideal for collectors of all ages.</p>
             <span style="font-size: 1.1rem; font-weight: bold; color: #1a73e8;">$19.75</span>
         </div>
     </div>
     <br>
-        <h2 class="Section-Header">NBA</h2>
-       <div class="products" style="display: flex; gap: 32px; justify-content: center; ">
-    <div class="product-card" style="background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 280px; padding: 20px; display: flex; flex-direction: column; align-items: left;">
-            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Basketball Card" style="width: 100%; border-radius: 14px; object-fit: cover; margin-bottom: 16px;">
+    <h2 class="Section-Header">NBA</h2>
+    <div class="products" style="display: flex; gap: 32px; justify-content: center; ">
+        <div class="product-card"
+            style="background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 280px; padding: 20px; display: flex; flex-direction: column; align-items: left;">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                alt="Basketball Card" style="width: 100%; border-radius: 14px; object-fit: cover; margin-bottom: 16px;">
             <h2 style="font-size: 1.2rem; margin: 0 0 8px 0; font-weight: 600;">Elite Slam Basketball Card</h2>
-            <p style="color: #555; font-size: 0.98rem; margin: 0 0 14px 0; text-align: left;">A rare collectible featuring a dynamic slam dunk moment. Perfect for basketball fans and collectors.</p>
+            <p style="color: #555; font-size: 0.98rem; margin: 0 0 14px 0; text-align: left;">A rare collectible
+                featuring a dynamic slam dunk moment. Perfect for basketball fans and collectors.</p>
             <span style="font-size: 1.1rem; font-weight: bold; color: #1a73e8;">$29.99</span>
         </div>
-    <div class="product-card" style="background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 280px; padding: 20px; display: flex; flex-direction: column; align-items: left;">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Soccer Card" style="width: 100%; border-radius: 14px; object-fit: cover; margin-bottom: 16px;">
+        <div class="product-card"
+            style="background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 280px; padding: 20px; display: flex; flex-direction: column; align-items: left;">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                alt="Soccer Card" style="width: 100%; border-radius: 14px; object-fit: cover; margin-bottom: 16px;">
             <h2 style="font-size: 1.2rem; margin: 0 0 8px 0; font-weight: 600;">Legends Soccer Card</h2>
-            <p style="color: #555; font-size: 0.98rem; margin: 0 0 14px 0; text-align: left;">Celebrate the greatest moments in soccer history with this premium card. A must-have for true fans.</p>
+            <p style="color: #555; font-size: 0.98rem; margin: 0 0 14px 0; text-align: left;">Celebrate the greatest
+                moments in soccer history with this premium card. A must-have for true fans.</p>
             <span style="font-size: 1.1rem; font-weight: bold; color: #1a73e8;">$24.50</span>
         </div>
-    <div class="product-card" style="background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 280px; padding: 20px; display: flex; flex-direction: column; align-items: left;">
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Baseball Card" style="width: 100%; border-radius: 14px; object-fit: cover; margin-bottom: 16px;">
+        <div class="product-card"
+            style="background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 280px; padding: 20px; display: flex; flex-direction: column; align-items: left;">
+            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
+                alt="Baseball Card" style="width: 100%; border-radius: 14px; object-fit: cover; margin-bottom: 16px;">
             <h2 style="font-size: 1.2rem; margin: 0 0 8px 0; font-weight: 600;">Classic Baseball Card</h2>
-            <p style="color: #555; font-size: 0.98rem; margin: 0 0 14px 0; text-align: left;">Own a piece of baseball nostalgia with this beautifully designed card. Ideal for collectors of all ages.</p>
+            <p style="color: #555; font-size: 0.98rem; margin: 0 0 14px 0; text-align: left;">Own a piece of baseball
+                nostalgia with this beautifully designed card. Ideal for collectors of all ages.</p>
             <span style="font-size: 1.1rem; font-weight: bold; color: #1a73e8;">$19.75</span>
         </div>
     </div>
     <br>
-        <h2 class="Section-Header">MLB</h2>
-       <div class="products" style="display: flex; gap: 32px; justify-content: center;">
-    <div class="product-card" style="background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 280px; padding: 20px; display: flex; flex-direction: column; align-items: left;">
-            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Basketball Card" style="width: 100%; border-radius: 14px; object-fit: cover; margin-bottom: 16px;">
+    <h2 class="Section-Header">MLB</h2>
+    <div class="products" style="display: flex; gap: 32px; justify-content: center;">
+        <div class="product-card"
+            style="background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 280px; padding: 20px; display: flex; flex-direction: column; align-items: left;">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                alt="Basketball Card" style="width: 100%; border-radius: 14px; object-fit: cover; margin-bottom: 16px;">
             <h2 style="font-size: 1.2rem; margin: 0 0 8px 0; font-weight: 600;">Elite Slam Basketball Card</h2>
-            <p style="color: #555; font-size: 0.98rem; margin: 0 0 14px 0; text-align: left;">A rare collectible featuring a dynamic slam dunk moment. Perfect for basketball fans and collectors.</p>
+            <p style="color: #555; font-size: 0.98rem; margin: 0 0 14px 0; text-align: left;">A rare collectible
+                featuring a dynamic slam dunk moment. Perfect for basketball fans and collectors.</p>
             <span style="font-size: 1.1rem; font-weight: bold; color: #1a73e8;">$29.99</span>
         </div>
-    <div class="product-card" style="background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 280px; padding: 20px; display: flex; flex-direction: column; align-items: left;">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Soccer Card" style="width: 100%; border-radius: 14px; object-fit: cover; margin-bottom: 16px;">
+        <div class="product-card"
+            style="background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 280px; padding: 20px; display: flex; flex-direction: column; align-items: left;">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                alt="Soccer Card" style="width: 100%; border-radius: 14px; object-fit: cover; margin-bottom: 16px;">
             <h2 style="font-size: 1.2rem; margin: 0 0 8px 0; font-weight: 600;">Legends Soccer Card</h2>
-            <p style="color: #555; font-size: 0.98rem; margin: 0 0 14px 0; text-align: left;">Celebrate the greatest moments in soccer history with this premium card. A must-have for true fans.</p>
+            <p style="color: #555; font-size: 0.98rem; margin: 0 0 14px 0; text-align: left;">Celebrate the greatest
+                moments in soccer history with this premium card. A must-have for true fans.</p>
             <span style="font-size: 1.1rem; font-weight: bold; color: #1a73e8;">$24.50</span>
         </div>
-        <div class="product-card" style="background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 280px; padding: 20px; display: flex; flex-direction: column; align-items: left;">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Soccer Card" style="width: 100%; border-radius: 14px; object-fit: cover; margin-bottom: 16px;">
+        <div class="product-card"
+            style="background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 280px; padding: 20px; display: flex; flex-direction: column; align-items: left;">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                alt="Soccer Card" style="width: 100%; border-radius: 14px; object-fit: cover; margin-bottom: 16px;">
             <h2 style="font-size: 1.2rem; margin: 0 0 8px 0; font-weight: 600;">Legends Soccer Card</h2>
-            <p style="color: #555; font-size: 0.98rem; margin: 0 0 14px 0; text-align: left;">Celebrate the greatest moments in soccer history with this premium card. A must-have for true fans.</p>
+            <p style="color: #555; font-size: 0.98rem; margin: 0 0 14px 0; text-align: left;">Celebrate the greatest
+                moments in soccer history with this premium card. A must-have for true fans.</p>
             <span style="font-size: 1.1rem; font-weight: bold; color: #1a73e8;">$24.50</span>
         </div>
     </div>
 
-
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>STE Cards</h3>
+                <p>Crafting premium custom sports cards since day one. Premium quality, fast turnaround.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Shop</a></li>
+                    <li><a href="contact.html">Request Custom</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: <a href="mailto:info@stecards.com">info@stecards.com</a></p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram" class="social-link">Instagram</a>
+                    <a href="#" aria-label="Twitter" class="social-link">Twitter</a>
+                    <a href="#" aria-label="Facebook" class="social-link">Facebook</a>
+                    <a href="#" aria-label="TikTok" class="social-link">TikTok</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 STE Cards. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
+
 </html>
