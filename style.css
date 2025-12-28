@@ -108,6 +108,9 @@ input,label,textarea {
 }
 
 /* Footer Styles */
+footer {
+    max-width: 100%;
+}
 .footer {
     background: linear-gradient(135deg, #0f172a 0%, #0b2a66 100%);
     color: #fff;
@@ -173,23 +176,18 @@ input,label,textarea {
 }
 
 .social-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
+    display: inline-block;
+    padding: 8px 12px;
     background: rgba(96, 165, 250, 0.15);
-    border-radius: 50%;
-    color: #60a5fa;
-    font-size: 1.2rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
     transition: all 0.3s ease;
 }
 
 .social-link:hover {
     background: rgba(96, 165, 250, 0.3);
-    color: #93c5fd;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.2);
+    transform: translateY(-2px);
 }
 
 .footer-bottom {
@@ -205,6 +203,7 @@ input,label,textarea {
     .footer {
         padding: 36px 16px 16px 16px;
         margin-top: 40px;
+        max-width: 100%;
     }
 
     .footer-container {
